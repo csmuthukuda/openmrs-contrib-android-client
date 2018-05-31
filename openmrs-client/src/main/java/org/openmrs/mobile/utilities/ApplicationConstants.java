@@ -54,7 +54,6 @@ public abstract class ApplicationConstants {
         public static final String WARNING_LOST_DATA_DIALOG_TAG = "warningLostDataDialog";
         public static final String SIMILAR_PATIENTS_TAG = "similarPatientsDialogTag";
         public static final String DELET_PATIENT_DIALOG_TAG = "deletePatientDialogTag";
-        public static final String LOCATION_DIALOG_TAG = "locationDialogTag";
     }
 
     public abstract static class RegisterPatientRequirements {
@@ -74,8 +73,6 @@ public abstract class ApplicationConstants {
         public static final String FORM_FIELDS_LIST_BUNDLE = "formFieldsListBundle";
         public static final String PATIENT_QUERY_BUNDLE = "patientQuery";
         public static final String PATIENTS_START_INDEX = "patientsStartIndex";
-        public static final String PROVIDER_ID_BUNDLE = "providerID";
-
     }
 
     public abstract static class ServiceActions {

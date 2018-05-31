@@ -60,7 +60,11 @@ public class FormEntryPatientListActivity extends ACBaseActivity {
         getMenuInflater().inflate(R.menu.form_entry_patient_list_menu, menu);
         final SearchView findPatientView;
         MenuItem mFindPatientMenuItem = menu.findItem(R.id.actionSearchRemoteFormEntry);
-        findPatientView = (SearchView) mFindPatientMenuItem.getActionView();
+        if (OpenMRS.getInstance().isRunningHoneycombVersionOrHigher()) {
+            findPatientView = (SearchView) mFindPatientMenuItem.getActionView();
+        } else {
+            findPatientView = (SearchView) MenuItemCompat.getActionView(mFindPatientMenuItem);
+        }
 
         // Search function
         findPatientView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

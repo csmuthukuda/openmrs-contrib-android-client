@@ -86,7 +86,11 @@ public class LastViewedPatientsActivity extends ACBaseActivity {
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.find_patients_remote_menu, menu);
         MenuItem mFindPatientMenuItem = menu.findItem(R.id.actionSearchRemote);
-        findPatientView = (SearchView) mFindPatientMenuItem.getActionView();
+        if (OpenMRS.getInstance().isRunningHoneycombVersionOrHigher()) {
+            findPatientView = (SearchView) mFindPatientMenuItem.getActionView();
+        } else {
+            findPatientView = (SearchView) MenuItemCompat.getActionView(mFindPatientMenuItem);
+        }
 
         if(StringUtils.notEmpty(query)){
             mFindPatientMenuItem.expandActionView();

@@ -38,7 +38,6 @@ import org.openmrs.mobile.activities.ACBaseFragment;
 import org.openmrs.mobile.activities.activevisits.ActiveVisitsActivity;
 import org.openmrs.mobile.activities.addeditpatient.AddEditPatientActivity;
 import org.openmrs.mobile.activities.formentrypatientlist.FormEntryPatientListActivity;
-import org.openmrs.mobile.activities.providermanager.ProviderManagementActivity;
 import org.openmrs.mobile.activities.syncedpatients.SyncedPatientsActivity;
 import org.openmrs.mobile.utilities.FontsUtil;
 import org.openmrs.mobile.utilities.ImageUtils;
@@ -54,7 +53,6 @@ public class DashboardFragment extends ACBaseFragment<DashboardContract.Presente
     private RelativeLayout mRegistryPatientView;
     private RelativeLayout mActiveVisitsView;
     private RelativeLayout mCaptureVitalsView;
-    private RelativeLayout mProviderManagementView;
 
     private SparseArray<Bitmap> mBitmapCache;
 
@@ -229,7 +227,6 @@ public class DashboardFragment extends ACBaseFragment<DashboardContract.Presente
         mRegistryPatientView = (RelativeLayout) root.findViewById(R.id.registryPatientView);
         mCaptureVitalsView = (RelativeLayout) root.findViewById(R.id.captureVitalsView);
         mActiveVisitsView = (RelativeLayout) root.findViewById(R.id.activeVisitsView);
-        mProviderManagementView = (RelativeLayout) root.findViewById(R.id.providerManagementView);
     }
 
     private void setListeners() {
@@ -237,7 +234,6 @@ public class DashboardFragment extends ACBaseFragment<DashboardContract.Presente
         mRegistryPatientView.setOnClickListener(this);
         mFindPatientView.setOnClickListener(this);
         mCaptureVitalsView.setOnClickListener(this);
-        mProviderManagementView.setOnClickListener(this);
     }
 
     @Override
@@ -320,9 +316,6 @@ public class DashboardFragment extends ACBaseFragment<DashboardContract.Presente
                 break;
             case R.id.activeVisitsView:
                 startNewActivity(ActiveVisitsActivity.class);
-                break;
-            case R.id.providerManagementView:
-                startNewActivity(ProviderManagementActivity.class);
                 break;
             default:
                 // Do nothing
